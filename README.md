@@ -27,6 +27,10 @@ This is best-effort, conditional capacity, not a 24/7 availability commitment. A
 
 Usage is metered by the model and Antseed software. The installed payment implementation rounds each request to whole micro-USDC; at these low rates, very short requests may round to zero. An amount displayed in an estimated cents field is not proof of settlement. Technical self-tests and related-party activity are distinct from independent customer demand. Advertised price, token output, settled USDC and ANTS eligibility are separate facts; no rewards or daily revenue are promised.
 
+## How to choose this provider
+
+For a real short-text task, see the [opt-in buyer quickstart](BUYER-QUICKSTART.md). It shows how to inspect the current offer and explicitly select this peer for one request using the official buyer, without lowering the buyer's global automatic-routing trust preference. Hard buyer and gateway policies still apply. This is a new provider with limited settled history; explicit selection is the buyer's choice and does not guarantee availability or ANTS rewards.
+
 ## 27B rollout
 
 The 27B pilot was started on 20 October 2026 at 19:34 China Standard Time (UTC+8). Thirteen bounded local runtime checks passed, covering fixed Chinese/English answers, returned usage, streaming, input limits, concurrency rejection and a follow-up request after client disconnect. These are functional checks, not a broad quality benchmark or paid orders. Immediate cancellation of GPU work after a client disconnect is not guaranteed.
