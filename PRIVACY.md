@@ -10,7 +10,7 @@ The service name is **Joyrush Local AI**, operated by the independent individual
 
 This notice describes the current limited Antseed inference pilot and the handling observed in its local deployment. It is not Antseed Foundation's privacy policy and does not describe unrelated services operated by other network participants.
 
-The currently configured model is Qwen3.5-9B Q4_K_M. A Qwen3.8-27B 4-bit deployment is under preparation and is not represented here as live. MTP is not enabled. The service has one concurrent request slot and is available only when its workload admission guard permits it.
+The current pilot advertises Qwen3.8-27B and uses a local 4-bit MLX checkpoint, internally identified as Qwen3.8-27B-4bit. MTP is not enabled. It replaced the prior 9B pilot on 20 October 2026 at 19:34 China Standard Time (UTC+8). The service has one concurrent request slot and is available only when its workload admission guard permits it.
 
 ## 2. Data processed to deliver inference
 
