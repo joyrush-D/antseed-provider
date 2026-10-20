@@ -19,11 +19,11 @@ Qwen3.8-27B runs locally as a 4-bit MLX checkpoint on an M5 Max with 128 GB unif
 |---|---|---:|---:|
 | Qwen3.8-27B | Active 4-bit pilot; availability conditional; MTP disabled | 0.01 / 0.01 | 0.03 |
 
-The configured context is 8,192 tokens, but the gateway currently accepts at most 16 plain-text messages, 2,048 combined input characters and 4,096 UTF-8 input bytes. An explicit output budget of 1–256 tokens is required. Streaming requires `stream_options.include_usage=true`. These limits are enforced without silent truncation.
+The configured context is 8,192 tokens, but the gateway currently accepts at most 16 plain-text messages, 2,048 combined input characters and 4,096 UTF-8 input bytes. Specify either `max_tokens` or `max_completion_tokens` from 1–256; if neither is supplied, the service defaults to 256. Supplying both or an explicit out-of-range limit is rejected. Streaming requires `stream_options.include_usage=true`. These limits are enforced without silent truncation.
 
 ## Availability and billing
 
-This is best-effort, conditional capacity, not a 24/7 availability commitment. A workload guard prioritizes an existing training workload; it rejects new requests when safe capacity cannot be verified. Buyers should inspect current signed network metadata and handle temporary unavailability. No free-to-use model or verified TEE is currently offered.
+This is best-effort, conditional capacity, not a 24/7 availability commitment. A workload guard prioritizes an existing training workload; it rejects new requests when safe capacity cannot be verified. During a verified collection-start gap, admission may wait up to five seconds for a fresh observation; it never treats unknown or stale evidence as available capacity. Buyers should inspect current signed network metadata and handle temporary unavailability. No free-to-use model or verified TEE is currently offered.
 
 Usage is metered by the model and Antseed software. The installed payment implementation rounds each request to whole micro-USDC; at these low rates, very short requests may round to zero. An amount displayed in an estimated cents field is not proof of settlement. Technical self-tests and related-party activity are distinct from independent customer demand. Advertised price, token output, settled USDC and ANTS eligibility are separate facts; no rewards or daily revenue are promised.
 
